@@ -10,3 +10,4 @@ Rather than attempting to remediate all of them manually as I did to some([see h
 
 Script:
 
+[see here](https://github.com/Jeremiah-Rojas/Jeremiah-Rojas/tree/main/STIGs)
