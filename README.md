@@ -8,5 +8,5 @@ I scanned my machine for STIG Compliance and found the following results:
 
 Rather than attempting to remediate all of them manually as I did to some(see here), I decided to write a script that would make this system compliant.
 
-</br>Script:
+Script:
 
