@@ -18,8 +18,9 @@ Script #1: [script#1.ps1](https://github.com/Jeremiah-Rojas/DISA-Microsoft-Windo
 </br>Script #3: [script#3.ps1](https://github.com/Jeremiah-Rojas/DISA-Microsoft-Windows-10-STIG-v3r4-Compliance/blob/main/script%233.ps1)
 </br>_Note that these scripts to not remediate all STIGs but just some of the ones that did not pass on my VM when I scanned it._
 
-I decided to break these scripts up into three pieces just to prevent any error of overwhelming the system with too many configuration changes in such a short period of time; although the machine can probably handle it.
-As I was working on this lab, I ran into a problem where I could no longer connect to my VM via Remote Desktop most likely due to a STIG configuration change so I created a new VM and decided to temporarily leave out some STIGs to prevent further interruption. Some STIGs just don't apply since I am implementing them to a VM, some cannot be automated with a script, and others were creating problems concerning the scans and accessibility. I also created a restore point before running the STIGs so that if any similar error came up again, I would be able to simply restore the VM to a clean state instead of having to recreate the VM.
+I decided to break these scripts up into three pieces just to prevent any error of overwhelming the system with too many configuration changes in such a short period of time; although the machine can probably handle it. I used powershell ISE to look over any errors easily in the script.
+![image](https://github.com/user-attachments/assets/f03c4105-c630-45cf-9cf8-40e96e59bede)
+</br>As I was working on this lab, I ran into a problem where I could no longer connect to my VM via Remote Desktop most likely due to a STIG configuration change so I created a new VM and decided to temporarily leave out some STIGs to prevent further interruption. Some STIGs just don't apply since I am implementing them to a VM, some cannot be automated with a script, and others were creating problems concerning the scans and accessibility. I also created a restore point before running the STIGs so that if any similar error came up again, I would be able to simply restore the VM to a clean state instead of having to recreate the VM.
 
 ## Troubleshoot
 ```
@@ -54,8 +55,6 @@ Set-Service -Name "NAME" -StartupType Automatic
 
 ## Conclusion
 After much time trying to figure out the issue, I have come to the conclusion that these scripts are functioning correctly but due to the complicated nature of my scan, Cloud Tenable scan on VM in Microsoft Azure via RDP, it is very difficult to rescan the machine after applying the scripts and still get a good result; or a result that will show the remaining STIGs. 
-
-![image](https://github.com/user-attachments/assets/f03c4105-c630-45cf-9cf8-40e96e59bede)
 
 I hope anyone who sees this finds these scripts useful for lab or experiental purposes.
 
