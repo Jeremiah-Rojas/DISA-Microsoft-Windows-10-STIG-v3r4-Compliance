@@ -17,6 +17,37 @@ _Note that these scripts to not remediate all STIGs but just some of the ones th
 I decided to break these scripts up into three pieces just to prevent any error of overwhelming the system with too many configuration changes in such a short period of time; although the machine can probably handle it.
 As I was working on this lab, I ran into a problem where I could no longer connect to my VM via Remote Desktop most likely due to a STIG configuration change so I created a new VM and decided to temporarily leave out some STIGs to prevent further interruption. Some STIGs just don't apply since I am applying them to a VM, some cannot be automated with a script, and others were creating problems concerning the scans and accessibility. I also created a restore point before running the STIGs so that if any similar error came up again, I would be able to simply restore the VM to a clean state instead of having to recreate the VM.
 
+## Troubleshoot
+```
+# List of critical services to check
+$services = @(
+    "Winmgmt",             # Windows Management Instrumentation (WMI)
+    "RemoteRegistry",      # Remote Registry
+    "LanmanServer",        # Server
+    "LanmanWorkstation",   # Workstation
+    "RpcSs",               # Remote Procedure Call (RPC)
+    "TermService",         # Remote Desktop Services (optional)
+    "Wecsvc",              # Windows Event Collector (optional)
+    "Wuauserv"             # Windows Update (optional for compliance)
+)
+
+# Check status and startup type
+foreach ($service in $services) {
+    $svc = Get-Service -Name $service -ErrorAction SilentlyContinue
+    if ($svc) {
+        $startup = (Get-CimInstance -ClassName Win32_Service -Filter "Name='$service'").StartMode
+        Write-Output "Service: $($svc.Name) - Status: $($svc.Status) - Startup Type: $startup"
+    } else {
+        Write-Output "Service '$service' not found!"
+    }
+}
+```
+This powershell script checks the status of critical services nessecary for Nesus to properly scan for STIG compliance.
+</br>All of the above services should be running. If any service is not running, this command will start it (“NAME” would be the name of the service):
+```
+Set-Service -Name "NAME" -StartupType Automatic
+```
+
 ## Conclusion
 After days of trying to figure out the issue, I have come to the conclusion that these scripts are functioning correctly but due to the complicated nature of the scan, Cloud Tenable scan on VM in Microsoft Azure via RDP, it is very difficult to rescan the machine after applying the scripts and still get a good result; or a result that will show the remaining STIGs. 
 
