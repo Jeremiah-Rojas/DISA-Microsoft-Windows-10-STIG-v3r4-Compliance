@@ -1,8 +1,11 @@
 # DISA-Microsoft-Windows-10-STIG-v3r4-Compliance
-
-## STIG Compliance Lab
 In this lab I will attempt to make my VM DISA Microsoft Windows 10 STIG v3r4 compliant.
-
+### Tools Utilized
+- Tenable Nessus
+- Microsoft Azure (VM)
+- Powershell ISE
+- ChatGPT (for script creation/troubleshoot)
+## STIG Compliance Lab
 I scanned my machine for STIG Compliance and found the following results:
 ![image](https://github.com/user-attachments/assets/3b2590e3-f976-4f29-813d-97f50c6d8c9a)
 
