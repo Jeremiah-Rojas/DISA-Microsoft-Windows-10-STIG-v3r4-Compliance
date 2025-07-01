@@ -10,8 +10,8 @@ I scanned my machine for STIG Compliance and found the following results:
 Rather than attempting to remediate all of them manually as I did to some([see here](https://github.com/Jeremiah-Rojas/Jeremiah-Rojas/tree/main/STIGs)), I decided to write scripts that would make this system compliant.
 
 Script #1:
-Script #2:
-Script #3:
+</br>Script #2:
+</br>Script #3:
 
 I decided to break these scripts up into three pieces just to prevent any error of overwhelming the system with too many configuration changes in such a short period of time; although the machine can probably handle it.
 As I was working on this lab, I ran into a problem where I could no longer connect to my VM via Remote Desktop most likely due to a STIG configuration change so I created a new VM and decided to temporarily leave out some STIGs to prevent further interruption. I also created a restore point before running the STIGs so that if any similar error came up again, I would be able to simply restore the VM to a clean state instead of having to recreate the VM.
