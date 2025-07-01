@@ -5,6 +5,7 @@ In this lab I will attempt to make my VM DISA Microsoft Windows 10 STIG v3r4 com
 - Microsoft Azure (VM)
 - Powershell ISE
 - ChatGPT (for script creation/troubleshoot)
+</br>
 ## STIG Compliance Lab
 I scanned my machine for STIG Compliance and found the following results:
 ![image](https://github.com/user-attachments/assets/3b2590e3-f976-4f29-813d-97f50c6d8c9a)
@@ -18,7 +19,7 @@ Script #1: [script#1.ps1](https://github.com/Jeremiah-Rojas/DISA-Microsoft-Windo
 _Note that these scripts to not remediate all STIGs but just some of the ones that did not pass on my VM when I scanned it._
 
 I decided to break these scripts up into three pieces just to prevent any error of overwhelming the system with too many configuration changes in such a short period of time; although the machine can probably handle it.
-As I was working on this lab, I ran into a problem where I could no longer connect to my VM via Remote Desktop most likely due to a STIG configuration change so I created a new VM and decided to temporarily leave out some STIGs to prevent further interruption. Some STIGs just don't apply since I am applying them to a VM, some cannot be automated with a script, and others were creating problems concerning the scans and accessibility. I also created a restore point before running the STIGs so that if any similar error came up again, I would be able to simply restore the VM to a clean state instead of having to recreate the VM.
+As I was working on this lab, I ran into a problem where I could no longer connect to my VM via Remote Desktop most likely due to a STIG configuration change so I created a new VM and decided to temporarily leave out some STIGs to prevent further interruption. Some STIGs just don't apply since I am implementing them to a VM, some cannot be automated with a script, and others were creating problems concerning the scans and accessibility. I also created a restore point before running the STIGs so that if any similar error came up again, I would be able to simply restore the VM to a clean state instead of having to recreate the VM.
 
 ## Troubleshoot
 ```
@@ -45,7 +46,7 @@ foreach ($service in $services) {
     }
 }
 ```
-This powershell script checks the status of critical services nessecary for Nesus to properly scan for STIG compliance.
+This powershell script above checks the status of critical services necessary for Nesus to properly scan for STIG compliance.
 </br>All of the above services should be running. If any service is not running, this command will start it (“NAME” would be the name of the service):
 ```
 Set-Service -Name "NAME" -StartupType Automatic
