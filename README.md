@@ -53,11 +53,13 @@ Set-Service -Name "NAME" -StartupType Automatic
 ```
 
 ## Conclusion
-After days of trying to figure out the issue, I have come to the conclusion that these scripts are functioning correctly but due to the complicated nature of the scan, Cloud Tenable scan on VM in Microsoft Azure via RDP, it is very difficult to rescan the machine after applying the scripts and still get a good result; or a result that will show the remaining STIGs. 
-
-Some of the STIGs cannot be applied via powershell script, but I have done my best to collect the STIG fixes that can be automated.
+After much time trying to figure out the issue, I have come to the conclusion that these scripts are functioning correctly but due to the complicated nature of my scan, Cloud Tenable scan on VM in Microsoft Azure via RDP, it is very difficult to rescan the machine after applying the scripts and still get a good result; or a result that will show the remaining STIGs. 
 
 ![image](https://github.com/user-attachments/assets/f03c4105-c630-45cf-9cf8-40e96e59bede)
 
-I hope anyone who sees this finds these scripts useful for lab purposes.
+I hope anyone who sees this finds these scripts useful for lab or experiental purposes.
+
+If you are interested in what prompt I used to create these powershell scripts, I went to this website ([stigaview](https://stigaview.com/)) and navigated to the appropriate OS. Then you find the STIG you want to remediate and copy and paste the key information it gives you:
+![image](https://github.com/user-attachments/assets/b701ec36-dcc3-466e-8630-8d4b085f6333)
+
 
