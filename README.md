@@ -12,6 +12,7 @@ Rather than attempting to remediate all of them manually as I did to some([see h
 Script #1: [script#1.ps1](https://github.com/Jeremiah-Rojas/DISA-Microsoft-Windows-10-STIG-v3r4-Compliance/blob/main/script%231.ps1)
 </br>Script #2: [script#2.ps1](https://github.com/Jeremiah-Rojas/DISA-Microsoft-Windows-10-STIG-v3r4-Compliance/blob/main/script%232.ps1)
 </br>Script #3: [script#3.ps1](https://github.com/Jeremiah-Rojas/DISA-Microsoft-Windows-10-STIG-v3r4-Compliance/blob/main/script%233.ps1)
+_Note that these scripts to not remediate all STIGs but just some of the ones that did not pass on my VM when I scanned it._
 
 I decided to break these scripts up into three pieces just to prevent any error of overwhelming the system with too many configuration changes in such a short period of time; although the machine can probably handle it.
 As I was working on this lab, I ran into a problem where I could no longer connect to my VM via Remote Desktop most likely due to a STIG configuration change so I created a new VM and decided to temporarily leave out some STIGs to prevent further interruption. Some STIGs just don't apply since I am applying them to a VM, some cannot be automated with a script, and others were creating problems concerning the scans and accessibility. I also created a restore point before running the STIGs so that if any similar error came up again, I would be able to simply restore the VM to a clean state instead of having to recreate the VM.
