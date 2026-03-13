@@ -1,5 +1,5 @@
 # DISA-Microsoft-Windows-10-STIG-v3r4-Compliance
-In this lab I will attempt to make my VM DISA Microsoft Windows 10 STIG v3r4 compliant.
+In this lab I attempted to make my Azure VM DISA Microsoft Windows 10 STIG v3r4 compliant.
 ### Tools Utilized
 - Tenable Nessus
 - Microsoft Azure (VM)
